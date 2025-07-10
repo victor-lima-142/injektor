@@ -1,0 +1,64 @@
+# Código fonte (só enviar o dist/)
+src/
+demo/
+tools/
+
+# Configurações de desenvolvimento
+tsconfig.json
+tsconfig.build.json  
+tsup.config.ts
+.editorconfig
+
+# Arquivos de test
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+
+# Node modules e locks
+node_modules/
+bun.lock
+package-lock.json
+yarn.lock
+
+# Build artifacts temporários
+*.tsbuildinfo
+.cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Coverage
+coverage/
+*.lcov
+
+# Temporary files
+*.tmp
+*.temp
+
+# Git
+.git/
+.gitignore
+
+# Outros
+TODO.md
+CHANGELOG.md 

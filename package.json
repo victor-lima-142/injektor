@@ -1,0 +1,75 @@
+{
+    "name": "@injektor/infuse",
+    "version": "0.1.0",
+    "description": "Framework moderno de injeção de dependências para TypeScript com suporte multi-runtime (Bun, Node.js, Deno)",
+    "keywords": [
+        "dependency-injection",
+        "di",
+        "framework",
+        "typescript",
+        "decorators",
+        "bun",
+        "nodejs",
+        "deno",
+        "http",
+        "web-framework"
+    ],
+    "author": "Victor Reboredo",
+    "license": "MIT",
+    "type": "module",
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            },
+            "require": {
+                "types": "./dist/index.d.cts",
+                "default": "./dist/index.cjs"
+            }
+        }
+    },
+    "files": [
+        "dist/**/*",
+        "README.md",
+        "LICENSE"
+    ],
+    "engines": {
+        "node": ">=16.0.0",
+        "bun": ">=1.0.0"
+    },
+    "scripts": {
+        "build": "tsup",
+        "build:watch": "tsup --watch",
+        "build:demo": "tsc demo/main.ts --outDir demo/dist",
+        "clean": "rimraf dist",
+        "dev": "tsup --watch",
+        "demo": "bun run demo/main.ts",
+        "demo:dist": "npm run build && node dist/demo/main.js",
+        "demo:dist:bun": "npm run build && bun run dist/demo/main.js",
+        "test": "bun test",
+        "lint": "tsc --noEmit",
+        "prepublishOnly": "npm run clean && npm run build && npm run lint",
+        "type-check": "tsc --noEmit"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/express": "^5.0.3",
+        "@types/node": "^24.0.10",
+        "rimraf": "^6.0.1",
+        "tslib": "^2.7.0",
+        "tsup": "^8.5.0",
+        "typescript": "^5.8.3"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "express": "^5.1.0",
+        "fastify": "^5.4.0",
+        "reflect-metadata": "^0.2.2"
+    }
+}

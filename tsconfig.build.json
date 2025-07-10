@@ -1,0 +1,52 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Override configurações para build
+    "noEmit": false,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // Target mais conservador para compatibilidade
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    
+    // Otimizações
+    "removeComments": false, // Manter comentários JSDoc
+    "importHelpers": true,
+    
+    // Strict para qualidade
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    
+    // Configurações para decorators
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    
+    // Output
+    "outDir": "./dist",
+    "rootDir": "./",
+    
+    // Não incluir extensões no output
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": false
+  },
+  "include": [
+    "src/**/*",
+    "demo/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.spec.ts"
+  ]
+} 
